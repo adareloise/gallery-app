@@ -1,4 +1,4 @@
-package cl.arteValparaiso.webapp.util.paginator;
+package cl.gallery.webapp.util.paginator;
 
 import java.util.ArrayList;
 import java.util.List;

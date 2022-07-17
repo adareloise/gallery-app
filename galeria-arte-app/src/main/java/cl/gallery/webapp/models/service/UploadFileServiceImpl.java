@@ -1,4 +1,4 @@
-package cl.arteValparaiso.webapp.models.service;
+package cl.gallery.webapp.models.service;
 
 import java.io.File;
 import java.io.IOException;

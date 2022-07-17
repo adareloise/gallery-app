@@ -1,4 +1,4 @@
-package cl.arteValparaiso.webapp.auth.handler;
+package cl.gallery.webapp.auth.handler;
 
 import java.io.IOException;
 

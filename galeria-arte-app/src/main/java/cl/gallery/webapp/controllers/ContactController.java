@@ -1,4 +1,4 @@
-package cl.arteValparaiso.webapp.controllers;
+package cl.gallery.webapp.controllers;
 
 import java.util.Map;
 
@@ -16,12 +16,12 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import cl.arteValparaiso.webapp.models.email.Mail;
-import cl.arteValparaiso.webapp.models.entity.Obra;
-import cl.arteValparaiso.webapp.models.entity.User;
-import cl.arteValparaiso.webapp.models.service.IObraService;
-import cl.arteValparaiso.webapp.models.service.IUserService;
-import cl.arteValparaiso.webapp.models.service.MailService;
+import cl.gallery.webapp.models.email.Mail;
+import cl.gallery.webapp.models.entity.Obra;
+import cl.gallery.webapp.models.entity.User;
+import cl.gallery.webapp.models.service.IObraService;
+import cl.gallery.webapp.models.service.IUserService;
+import cl.gallery.webapp.models.service.MailService;
 
 @Controller
 @SessionAttributes("mail")

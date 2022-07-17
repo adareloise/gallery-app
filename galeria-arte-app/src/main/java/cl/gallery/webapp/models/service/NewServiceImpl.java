@@ -1,4 +1,4 @@
-package cl.arteValparaiso.webapp.models.service;
+package cl.gallery.webapp.models.service;
 
 import java.util.List;
 
@@ -8,8 +8,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import cl.arteValparaiso.webapp.models.dao.INewDao;
-import cl.arteValparaiso.webapp.models.entity.Noticia;
+import cl.gallery.webapp.models.dao.INewDao;
+import cl.gallery.webapp.models.entity.Noticia;
 
 @Service
 public class NewServiceImpl implements INewService {

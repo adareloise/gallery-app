@@ -1,8 +1,8 @@
-package cl.arteValparaiso.webapp.models.dao;
+package cl.gallery.webapp.models.dao;
 
 import org.springframework.data.repository.PagingAndSortingRepository;
 
-import cl.arteValparaiso.webapp.models.entity.Noticia;
+import cl.gallery.webapp.models.entity.Noticia;
 
 public interface INewDao extends PagingAndSortingRepository<Noticia, Long>{
 

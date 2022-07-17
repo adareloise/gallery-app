@@ -1,4 +1,4 @@
-package cl.arteValparaiso.webapp.models.service;
+package cl.gallery.webapp.models.service;
 
 import java.util.List;
 
@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import cl.arteValparaiso.webapp.models.dao.IUserDao;
-import cl.arteValparaiso.webapp.models.entity.User;
+import cl.gallery.webapp.models.dao.IUserDao;
+import cl.gallery.webapp.models.entity.User;
 
 @Service
 public class UserServiceImpl implements IUserService {

@@ -1,4 +1,4 @@
-package cl.arteValparaiso.webapp.controllers;
+package cl.gallery.webapp.controllers;
 
 import java.util.Date;
 

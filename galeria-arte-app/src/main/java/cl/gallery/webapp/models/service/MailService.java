@@ -1,6 +1,6 @@
-package cl.arteValparaiso.webapp.models.service;
+package cl.gallery.webapp.models.service;
 
-import cl.arteValparaiso.webapp.models.email.Mail;
+import cl.gallery.webapp.models.email.Mail;
 
 public interface MailService {
 	public void sendEmail(Mail mail);

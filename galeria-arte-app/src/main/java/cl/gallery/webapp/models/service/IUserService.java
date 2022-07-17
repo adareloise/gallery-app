@@ -1,8 +1,8 @@
-package cl.arteValparaiso.webapp.models.service;
+package cl.gallery.webapp.models.service;
 
 import java.util.List;
 
-import cl.arteValparaiso.webapp.models.entity.User;
+import cl.gallery.webapp.models.entity.User;
 
 public interface IUserService {
 

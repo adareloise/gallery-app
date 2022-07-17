@@ -1,4 +1,4 @@
-package cl.arteValparaiso.webapp.controllers;
+package cl.gallery.webapp.controllers;
 
 import java.security.Principal;
 
@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import cl.arteValparaiso.webapp.models.entity.User;
-import cl.arteValparaiso.webapp.models.service.IUserService;
+import cl.gallery.webapp.models.entity.User;
+import cl.gallery.webapp.models.service.IUserService;
 
 @Controller
 public class LoginController {

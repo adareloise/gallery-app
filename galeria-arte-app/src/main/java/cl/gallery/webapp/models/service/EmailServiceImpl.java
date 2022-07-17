@@ -1,4 +1,4 @@
-package cl.arteValparaiso.webapp.models.service;
+package cl.gallery.webapp.models.service;
 
 import java.io.UnsupportedEncodingException;
 
@@ -11,7 +11,7 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
 
-import cl.arteValparaiso.webapp.models.email.Mail;
+import cl.gallery.webapp.models.email.Mail;
 
 @Service
 public class EmailServiceImpl implements MailService {

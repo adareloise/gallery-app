@@ -1,4 +1,4 @@
-package cl.arteValparaiso.webapp.controllers;
+package cl.gallery.webapp.controllers;
 
 import java.io.IOException; 
 import java.net.MalformedURLException;
@@ -28,9 +28,9 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import cl.arteValparaiso.webapp.models.entity.Obra;
-import cl.arteValparaiso.webapp.models.service.IObraService;
-import cl.arteValparaiso.webapp.models.service.IUploadFileService;
+import cl.gallery.webapp.models.entity.Obra;
+import cl.gallery.webapp.models.service.IObraService;
+import cl.gallery.webapp.models.service.IUploadFileService;
 
 @Controller
 @SessionAttributes("obra")

@@ -1,4 +1,4 @@
-package cl.arteValparaiso.webapp.controllers;
+package cl.gallery.webapp.controllers;
 
 import java.util.Map;
 
@@ -11,8 +11,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import cl.arteValparaiso.webapp.models.entity.User;
-import cl.arteValparaiso.webapp.models.service.IUserService;
+import cl.gallery.webapp.models.entity.User;
+import cl.gallery.webapp.models.service.IUserService;
 
 @Controller
 public class IndexController {

@@ -1,4 +1,4 @@
-package cl.arteValparaiso.webapp.models.email;
+package cl.gallery.webapp.models.email;
 
 import java.util.Date;
 import java.util.List;

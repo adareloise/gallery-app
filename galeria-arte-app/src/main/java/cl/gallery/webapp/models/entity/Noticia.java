@@ -1,4 +1,4 @@
-package cl.arteValparaiso.webapp.models.entity;
+package cl.gallery.webapp.models.entity;
 
 import java.io.Serializable;
 import java.util.Date;

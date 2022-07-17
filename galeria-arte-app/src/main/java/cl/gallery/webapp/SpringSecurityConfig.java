@@ -1,4 +1,4 @@
-package cl.arteValparaiso.webapp;
+package cl.gallery.webapp;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
@@ -10,7 +10,7 @@ import org.springframework.security.core.userdetails.User.UserBuilder;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-import cl.arteValparaiso.webapp.auth.handler.LoginSuccessHandler;
+import cl.gallery.webapp.auth.handler.LoginSuccessHandler;
 
 @Configuration
 public class SpringSecurityConfig extends WebSecurityConfigurerAdapter{

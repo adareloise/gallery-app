@@ -1,4 +1,4 @@
-package cl.arteValparaiso.webapp;
+package cl.gallery.webapp;
 
 import java.util.Locale;
 
