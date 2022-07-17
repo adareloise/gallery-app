@@ -1,0 +1,44 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head></head>
+
+<body>
+	<!-- Portafolio -->
+	<div class="text-center py-4" th:fragment="gellery">
+		<div class="row">
+			<h2 class="font-weight-light py-4" th:text="${titulo}"></h2>		
+		</div >
+		
+		<!-- Objects -->
+		<div class="container py-4">
+			<div class="images-wrapper" >
+				<div class="img-cont" th:each="obra : ${obras}" id="gallery-container"
+				 th:if="${obra.posicion == 'horizontal'}">
+					<a th:href="@{/obra-view/}+ ${obra.id}">
+						<img th:if="${#strings.length(obra.foto) > 0}" class="image"
+							style="display:inline;width:100%;" th:src="@{'/gallery/uploads/' + ${obra.foto}}"
+							data-full="#" th:alt="${obra.foto}" />
+					</a >
+				</div>
+
+				<div class="img-cont" th:each="obra : ${obras}"
+					th:if="${obra.posicion == 'vertical'}">
+					<a th:href="@{/obra-view/}+ ${obra.id}">
+						<img th:if="${#strings.length(obra.foto) > 0}" class="image"
+							style="display:inline;width:100%;" th:src="@{'/gallery/uploads/' + ${obra.foto}}"
+							th:alt="${obra.foto}" />
+					</a>
+				</div>		
+			</div>
+		</div >
+		
+		<div class="full-image-container">
+        	<img class="full-image" src="" alt="">
+        	<p class="image-title"></p>
+    	</div>
+		
+		<div class="mx-2" th:replace="object/paginator_nav :: paginator"> </div >
+	</div>
+</body>
+
+</html>

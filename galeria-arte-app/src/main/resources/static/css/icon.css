@@ -1,0 +1,63 @@
+.social-list {
+    display: inline-flex
+}
+
+.social-list li {
+    list-style: none;
+}
+
+.maincard {
+    position: relative;
+    width: 120px;
+    height: 80px
+}
+
+.thecard {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: hidden;
+    color: #fff;
+    border-radius: 10px;
+    border: none;;
+    padding: 4px
+}
+
+
+
+.social-text small {
+    font-size: 20px
+}
+
+@media (max-width:900px) {
+    .social-list {
+        display: block
+    }
+}
+.thecard:hover{
+	background: #a6e7ff
+
+;	
+}
+
+.facebook {
+    background:#1e90ff
+
+}
+
+.instagram {
+    background: #ba55d3
+}
+
+.youtube {
+    background: #ff6347
+}
+
+.whatsapp {
+    background: #32cd32
+}
+
+.user {
+    background: #9400d3
+
+}

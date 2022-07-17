@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/public :: head"></head>
+
+<body>
+	<h3 th:text="${error}"></h3>
+	
+	<div th:text="${message}"></div>
+	<div th:text="${status}"></div>
+	<div th:text="${timestamp}"></div>
+	
+	<footer th:replace="fragments/public :: footer"> </footer>
+	<div th:replace="layout/public :: scripts"></div >
+</body>
+</html>

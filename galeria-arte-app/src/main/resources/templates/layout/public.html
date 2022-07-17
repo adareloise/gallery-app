@@ -1,0 +1,164 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="head">
+	<title th:text="${titulo}"></title>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+ 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet" type="text/css" />
+	<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+	<link th:href="@{/css/icon.css}" rel="stylesheet">
+	<link th:href="@{/css/style.css}" rel="stylesheet">
+	<link th:href="@{/css/jquery-ui.min.css}" rel="stylesheet">
+   	<link th:href="@{/css/main.css}" type="text/css" rel="stylesheet"/>
+</head>
+
+<body>
+	<!-- menu -->
+	<header th:fragment="menu">
+		<nav class="navbar navbar-expand-xl navbar-dark bg-dark fixed-top py-3">
+			<div class="container-fluid">
+				<a class="navbar-brand" th:href="@{/}">Fernando Concha</a>
+					 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar" aria-controls="mynavbar" aria-expanded="false" aria-label="Toggle navigation">
+      					<span class="navbar-toggler-icon"></span>
+    				</button>
+				
+				<div class="collapse navbar-collapse" id="mynavbar" sec:authorize="isAuthenticated()">
+					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+						<li class="nav-item mx-1"><a class="btn btn-outline-success"
+						th:href="@{/service}">Servicios <i class="fab fa-expeditedssl"></i></a>
+						</li>
+					</ul>
+				</div>
+				
+				<div class="collapse navbar-collapse" id="mynavbar">
+					<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+						<li class="nav-item">
+							<a class="nav-link active" th:href="@{/biografia/1}">Biografía</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link active" th:href="@{/noticias}">Noticias</a>
+						</li>
+						<li class="nav-item dropdown">
+						 	<a class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Galerias</a>
+   							 <ul class="dropdown-menu">
+   							 	<li><a class="nav-link active text-dark" th:href="@{/galeria}">Galeria</a></li> 
+   							 	<li><a class="nav-link active text-dark" th:href="@{/galeria/acuarelas}">Acuarelas</a></li>
+   							 	<li><a class="nav-link active text-dark" th:href="@{/galeria/oleos}">Oleos</a></li>								
+   							 </ul>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link active" th:href="@{/contact/info}">Contacto</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<br><br><br>
+		<div class="alert alert-success" role="alert" th:if="${success != null}" th:text="${success}"></div>
+		<div class="alert alert-danger" role="alert" th:if="${error != null}" th:text="${error}"></div>
+		<div class="alert alert-warning" role="alert" th:if="${warning != null}" th:text="${warning}"></div>
+		<div class="alert alert-info" role="alert" th:if="${info != null}" th:text="${info}"></div>
+	</header>
+
+	<!-- Footer -->
+	<footer th:fragment="footer" class="text-center text-white">
+
+		<!-- Grid container -->
+		<div class="container d-flex justify-content-center py-4">
+			<ul class="social-list">
+				<li>
+					<div class="maincard p-3 m-2">
+						<div class="thecard text-center facebook py-4">
+							<div class="social-icon">
+								<a class="hiper" th:href="${user.facebook}">
+									<i class="fab fa-facebook-f my-1"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="maincard p-3 m-2">
+						<div class="thecard text-center instagram py-4">
+							<div class="social-icon"> 
+								<a class="hiper" th:href="${user.instagram}">
+									<i class="fab fa-instagram my-1"></i> 
+								</a>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="maincard p-3 m-2">
+						<div class="thecard text-center youtube py-4">
+							<div class="social-icon"> 
+								<a class="hiper" th:href="${user.youtube}">
+									<i class="fab fa-youtube my-1"></i> 
+								</a>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="maincard p-3 m-2">
+						<div class="thecard   text-center whatsapp py-4">
+							<div class="social-icon">
+								<a class="hiper" th:href="'https://wa.me/'+ ${user.telefono}"> 
+									<i class="fab fa-whatsapp my-1"></i> 
+								</a>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li sec:authorize="!isAuthenticated()">
+					<div class="maincard p-3 m-2">
+						<div class="thecard text-center user py-4">
+							<div class="social-icon">
+								<a th:href="@{/login}" class="hiper">
+									<i class="fa fa-user my-1"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li  sec:authorize="isAuthenticated() ">
+					<div class="maincard p-3 m-2">
+						<div class="thecard text-center user py-4">
+							<div class="social-icon">
+								<form id="logoutForm" th:action="@{/logout}" method="post">
+									<button class="btn btn-primary"
+										onclick="document.getElementById('logoutForm').submit();"
+										type="submit">Salir</button>
+									<input type="hidden" th:name="${_csrf.parameterName}"
+										th:value="${_csrf.token}" />
+								</form>
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+
+		<!-- Copyright -->
+		<div class="dark-blue-gray">
+			<p class="text-white" sec:authorize="isAuthenticated()">
+				Usuario logeado: <span sec:authentication="name"></span> | Roles: <span
+					sec:authentication="principal.authorities"></span>
+			</p>
+			<div class="text-center p-3" >
+				2022 Copyright: 
+				<a class="text-white" href="https://artevalparaiso.cl/">Artevalparaiso.cl</a>
+			</div>
+		</div >
+	</footer>
+
+	<!-- scripts  -->
+	<div th:fragment="scripts">
+		<script th:src="@{/js/jquery-3.6.0.min.js}"></script>
+		<script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+		<script th:src"@{/js/popper.min.js}"></script>
+		<script th:src="@{/js/jquery-ui.min.js}"></script>
+	</div>
+</body>
+
+</html>

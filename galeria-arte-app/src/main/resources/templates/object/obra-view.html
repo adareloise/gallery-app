@@ -1,0 +1,44 @@
+<html xmlns:th="http://www.thymeleaf.org" />
+
+<head th:replace="layout/public :: head"> </head>
+
+<body>
+
+	<header th:replace="layout/public :: menu"></header>
+
+	<div class=" py-4">
+	
+			<h1 th:text="${obra.titulo}" class="text-center"></h1>
+
+		<div class="text-center py-4" th:fragment="obra">
+			<div th:fragment="obra-nb">
+				<a>
+					<img th:if="${#strings.length(obra.foto) > 0}" class="rounded mx-auto d-block"
+						style="display:inline;width:80%;" th:src="@{'/gallery/uploads/' + ${obra.foto}}"
+						th:alt="${obra.foto}" />
+				</a>
+
+				<div class="card-body">
+					<ul class="list-group">
+						<li class="list-group-item fresh-air text-white" th:text="${obra.titulo}"></li>
+						<li class="list-group-item" th:text="${obra.dimension}"></li>
+						<li class="list-group-item" th:text="${obra.tecnica}"></li>
+						<li class="list-group-item" th:text="${obra.disponibilidad}"></li>
+					</ul>
+				</div>
+			</div>
+			<div>
+				<br>
+				<a th:href="@{/contact/obra/}+ ${obra.id}" class="btn btn-dark">Solicitar</a>
+			</div>
+		</div>
+	</div>
+	</div>
+
+	<footer th:replace="layout/public :: footer"></footer>
+	
+	<!-- Scripts -->
+	<div th:replace="layout/public :: scripts"></div >
+</body>
+
+</html>

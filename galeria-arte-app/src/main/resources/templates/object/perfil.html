@@ -1,0 +1,121 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="layout/service :: head">
+</head>
+
+<body>
+
+	<header th:replace="layout/service :: menu"></header>
+
+	<div th:fragment="perfil">
+		<div class="card">
+			<!-- Primer Container -->
+			<div class="card">
+				<div class="row">
+					<div class="col align-self-end">
+						<div class="row text-center">
+							<div class="col col-xs m-2">
+								<a th:href="@{/biografia/1}">
+									<img th:src="@{/img/icons/chile.png}" class="img-responsive img-circle margin"
+										style="display:inline" alt="delete" width="30" height="30">
+								</a>
+							</div>
+							<div class="col col-xs m-2">
+								<a th:href="@{/biografia/2}">
+									<img th:src="@{/img/icons/united-kingdom.png}"
+										class="img-responsive img-circle margin" style="display:inline" alt="english"
+										width="30" height="30">
+								</a>
+							</div>
+							<div class="col col-xs m-2">
+								<a th:href="@{/biografia/3}">
+									<img th:src="@{/img/icons/france.png}" class="img-responsive img-circle margin"
+										style="display:inline" alt="delete" width="30" height="30">
+								</a>
+							</div>
+							<div class="col col-xs m-2">
+								<a th:href="@{/biografia/4}">
+									<img th:src="@{/img/icons/germany.png}" class="img-responsive img-circle margin"
+										style="display:inline" alt="delete" width="30" height="30">
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="card-header">
+					<h1 class="text-center" th:text="${user.nombre}"></h1>
+				</div>
+				<div class="card-body text-center">
+					<img th:if="${#strings.length(user.foto) > 0}" class="rounded mx-auto d-block"
+						style="max-width: 80%;" th:src="@{'/user/uploads/' + ${user.foto}}" th:alt="${user.foto}" />
+					<h3 th:if="${perfil.id == 1}" th:text="${user.profesion}"></h3>
+					<h3 th:if="${perfil.id == 2}" >Painter</h3>
+					<h3 th:if="${perfil.id == 3}" >Peintre</h3>
+					<h3 th:if="${perfil.id == 4}" >Maler</h3>
+				</div>
+			</div>
+
+			<!-- Second Container -->
+			<div class="card bg-light py-4">
+				<div class="card-body">
+
+					<div class="card-header fresh-air text-white py-2">
+						<h3 class="text-center"  th:if="${perfil.id == 1}" >¿Quien Soy?</h3>
+						<h3 class="text-center"  th:if="${perfil.id == 2}" >Who I am?</h3>
+						<h3 class="text-center"  th:if="${perfil.id == 3}" >Qui suis-je?</h3>
+						<h3 class="text-center"  th:if="${perfil.id == 4}" >Wer bin Ich?</h3>
+					</div>
+					<div class="card-body text-center">
+						<p th:text="${perfil.descripcion1}"></p>
+					</div>
+				</div>
+			</div>
+
+			<!-- Third Container (Grid) -->
+			<div class="card bg-light py-4">
+				<div class="card-body">
+					<div class="card-header fresh-air text-white text-center py-2">
+						<h3 class="margin"  th:if="${perfil.id == 1}">Parte de mi historia </h3>
+						<h3 class="margin"  th:if="${perfil.id == 2}">Part of my story</h3>
+						<h3 class="margin"  th:if="${perfil.id == 3}">Une partie de mon histoire </h3>
+						<h3 class="margin"  th:if="${perfil.id == 4}">Eil meiner Geschichte </h3>
+					</div>
+					
+					<div class="card-body">
+						<div class="row py-2 text-center">
+							<div class="col-sm">
+								<p th:text="${perfil.descripcion2}"></p>
+							</div>
+							<div class="col-sm">
+								<p th:text="${perfil.descripcion3}"></p>
+							</div>
+							<div class="col-sm">
+								<p th:text="${perfil.descripcion4}"></p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Forth Container (Grid) -->
+				<div class="row py-2 text-center">
+					<div class="col-sm m-2 ">
+						<img th:src="@{/img/vistas/foto1.jpeg}" class="img-perfil" alt="puerto">
+					</div>
+					<div class="col-sm m-2">
+						<img th:src="@{/img/vistas/foto2.jpeg}" class="img-perfil" alt="mercado">
+					</div>
+					<div class="col-sm m-2">
+						<img th:src="@{/img/vistas/foto3.jpeg}" class="img-perfil" alt="feria">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<footer th:replace="layout/public :: footer"></footer>
+	<!-- Scripts -->
+	<div th:replace="layout/public :: scripts"></div >
+</body>
+
+</html>

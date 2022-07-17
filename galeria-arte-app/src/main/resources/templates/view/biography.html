@@ -1,0 +1,19 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace ="layout/public :: head">
+</head >
+<body>
+	<!-- Menu -->
+	<header th:replace ="layout/public :: menu"> 
+	</header>
+	
+	<!-- Biography -->
+	<div th:replace ="object/perfil :: perfil" ></div >
+	
+	<!-- Footer -->
+	<footer th:replace ="layout/public :: footer"></footer>
+	
+	<!-- Scripts -->
+	<div th:replace="layout/public :: scripts"></div >
+
+</body>
+</html>
